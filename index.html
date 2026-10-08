@@ -1,0 +1,280 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitWater | Brazalete inteligente</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            <span>💧</span>
+            FitWater
+        </div>
+
+        <div id="connectionStatus" class="status disconnected">
+            ● Arduino desconectado
+        </div>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main>
+
+        <!-- CONEXIÓN -->
+
+        <section class="connection-card">
+
+            <div>
+                <h2>Conexión del brazalete</h2>
+
+                <p>
+                    Conecta tu Arduino mediante USB para controlar
+                    el temporizador y recibir los datos del brazalete.
+                </p>
+            </div>
+
+            <div class="connection-buttons">
+
+                <button id="connectButton" class="button turquoise">
+                    🔌 Conectar Arduino
+                </button>
+
+                <button id="disconnectButton"
+                        class="button gray"
+                        disabled>
+                    Desconectar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PANEL PRINCIPAL -->
+
+        <section class="dashboard">
+
+            <!-- TEMPORIZADOR -->
+
+            <div class="card timer-card">
+
+                <div class="card-title">
+                    <span>⏱️</span>
+                    <h2>Temporizador</h2>
+                </div>
+
+                <div id="timerDisplay" class="timer">
+                    00:01:00
+                </div>
+
+                <div class="time-inputs">
+
+                    <div>
+                        <label>Minutos</label>
+
+                        <input
+                            id="minutesInput"
+                            type="number"
+                            min="0"
+                            max="999"
+                            value="1">
+                    </div>
+
+                    <div>
+                        <label>Segundos</label>
+
+                        <input
+                            id="secondsInput"
+                            type="number"
+                            min="0"
+                            max="59"
+                            value="0">
+                    </div>
+
+                </div>
+
+                <div class="button-group">
+
+                    <button id="saveButton"
+                            class="button turquoise"
+                            disabled>
+                        Guardar
+                    </button>
+
+                    <button id="startButton"
+                            class="button blue"
+                            disabled>
+                        ▶ Iniciar
+                    </button>
+
+                    <button id="pauseButton"
+                            class="button gray"
+                            disabled>
+                        ⏸ Pausar
+                    </button>
+
+                    <button id="resetButton"
+                            class="button red"
+                            disabled>
+                        ↻ Reiniciar
+                    </button>
+
+                </div>
+
+                <p class="info">
+                    Puedes pausar el temporizador para modificar
+                    el tiempo. El Arduino debe estar conectado.
+                </p>
+
+            </div>
+
+
+            <!-- LED -->
+
+            <div class="card led-card">
+
+                <div class="card-title">
+                    <span>💡</span>
+                    <h2>Luz del brazalete</h2>
+                </div>
+
+                <div id="ledIndicator" class="led-indicator">
+                </div>
+
+                <div class="led-state">
+                    <span>Estado:</span>
+
+                    <strong id="ledState">
+                        Apagado
+                    </strong>
+                </div>
+
+                <p class="info">
+                    Cuando termina el temporizador, el LED azul
+                    aumenta su intensidad lentamente durante
+                    2 segundos.
+                </p>
+
+            </div>
+
+
+            <!-- MOVIMIENTO -->
+
+            <div class="card movement-card">
+
+                <div class="card-title">
+                    <span>📈</span>
+                    <h2>Movimiento</h2>
+                </div>
+
+                <div class="movement-value">
+                    <span id="movementValue">0</span>
+                    <small>%</small>
+                </div>
+
+                <div class="movement-bar">
+
+                    <div class="movement-gradient"></div>
+
+                    <div id="movementMarker"
+                         class="movement-marker">
+                    </div>
+
+                </div>
+
+                <div class="movement-labels">
+
+                    <span>Bajo</span>
+                    <span>Medio</span>
+                    <span>Alto</span>
+
+                </div>
+
+                <p class="info">
+                    El sensor detecta cuánto se mueve el brazalete.
+                    El indicador va de rojo a amarillo y finalmente
+                    a verde.
+                </p>
+
+            </div>
+
+
+            <!-- PULSO -->
+
+            <div class="card pulse-card">
+
+                <div class="card-title">
+                    <span>❤️</span>
+                    <h2>Pulso cardíaco</h2>
+                </div>
+
+                <div class="pulse-number">
+
+                    <span id="bpmValue">
+                        --
+                    </span>
+
+                    <small>BPM</small>
+
+                </div>
+
+                <div class="pulse-line">
+
+                    <div class="pulse-animation"></div>
+
+                </div>
+
+                <p class="info">
+                    El valor se obtiene mediante el sensor
+                    de pulso conectado al Arduino.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN -->
+
+        <section class="info-panel">
+
+            <h2>⌚ Brazalete inteligente</h2>
+
+            <p>
+                Controla tu temporizador, observa el movimiento
+                y consulta el pulso recibido desde el Arduino.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            FitWater 💧 | Brazalete inteligente
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
