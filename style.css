@@ -1,0 +1,783 @@
+```css
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff9ff,
+            #ffffff 45%,
+            #e5f1f4
+        );
+
+    color: #23404a;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================
+   BARRA SUPERIOR
+===================================== */
+
+.topbar {
+
+    width: 100%;
+
+    min-height: 75px;
+
+    padding: 15px 5%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #65dff2,
+            #25c7cf
+        );
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.12);
+
+}
+
+
+.logo {
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}
+
+
+.logo span {
+    margin-right: 7px;
+}
+
+
+.status {
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.status.connected {
+
+    color: #008f87;
+
+}
+
+
+.status.disconnected {
+
+    color: #777;
+
+}
+
+
+/* =====================================
+   CONTENEDOR
+===================================== */
+
+main {
+
+    width: 92%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 30px 0 50px;
+
+}
+
+
+/* =====================================
+   CONEXIÓN
+===================================== */
+
+.connection-card {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border: 1px solid #d5e8ec;
+
+    box-shadow:
+        0 8px 25px rgba(50,120,130,0.12);
+
+    margin-bottom: 25px;
+
+}
+
+
+.connection-card h2 {
+
+    color: #168c99;
+
+    margin-bottom: 8px;
+
+}
+
+
+.connection-card p {
+
+    color: #71858b;
+
+}
+
+
+.connection-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* =====================================
+   DASHBOARD
+===================================== */
+
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+}
+
+
+/* =====================================
+   TARJETAS
+===================================== */
+
+.card {
+
+    background: rgba(255,255,255,0.95);
+
+    border-radius: 24px;
+
+    padding: 27px;
+
+    border: 1px solid #d6e7ea;
+
+    box-shadow:
+        0 8px 25px rgba(50,120,130,0.10);
+
+}
+
+
+.card-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.card-title span {
+
+    font-size: 25px;
+
+}
+
+
+.card-title h2 {
+
+    color: #168c99;
+
+}
+
+
+/* =====================================
+   TEMPORIZADOR
+===================================== */
+
+.timer-card {
+
+    grid-column: span 2;
+
+    text-align: center;
+
+}
+
+
+.timer {
+
+    font-size: clamp(45px, 8vw, 85px);
+
+    font-weight: bold;
+
+    color: #168c99;
+
+    letter-spacing: 4px;
+
+    margin: 20px 0 25px;
+
+}
+
+
+.time-inputs {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.time-inputs label {
+
+    display: block;
+
+    color: #61777e;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.time-inputs input {
+
+    width: 110px;
+
+    padding: 12px;
+
+    border: 2px solid #c8e4e8;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #23404a;
+
+    background: #f5fcfd;
+
+}
+
+
+.button-group {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.button {
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 12px 18px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        opacity 0.15s;
+
+}
+
+
+.button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.button:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+.turquoise {
+
+    background: #22c7c7;
+
+    color: white;
+
+}
+
+
+.blue {
+
+    background: #35bce8;
+
+    color: white;
+
+}
+
+
+.gray {
+
+    background: #7c8c91;
+
+    color: white;
+
+}
+
+
+.red {
+
+    background: #e56868;
+
+    color: white;
+
+}
+
+
+/* =====================================
+   LED
+===================================== */
+
+.led-card {
+
+    text-align: center;
+
+}
+
+
+.led-indicator {
+
+    height: 35px;
+
+    border-radius: 30px;
+
+    background: #e6edef;
+
+    transition:
+        background 0.1s,
+        box-shadow 0.1s;
+
+    margin: 30px 0 20px;
+
+}
+
+
+.led-state {
+
+    color: #65787d;
+
+}
+
+
+.led-state strong {
+
+    color: #168c99;
+
+    margin-left: 5px;
+
+}
+
+
+/* =====================================
+   MOVIMIENTO
+===================================== */
+
+.movement-card {
+
+    text-align: center;
+
+}
+
+
+.movement-value {
+
+    font-size: 65px;
+
+    font-weight: bold;
+
+    color: #22aeb7;
+
+    margin: 10px;
+
+}
+
+
+.movement-value small {
+
+    font-size: 25px;
+
+}
+
+
+.movement-bar {
+
+    position: relative;
+
+    height: 35px;
+
+    border-radius: 30px;
+
+    overflow: visible;
+
+    margin: 25px 5px 8px;
+
+}
+
+
+.movement-gradient {
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #720000 0%,
+            #ff0000 22%,
+            #ffff00 50%,
+            #00ff00 78%,
+            #006900 100%
+        );
+
+}
+
+
+.movement-marker {
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 45px;
+
+    top: -5px;
+
+    left: 0%;
+
+    transform: translateX(-50%);
+
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px #333;
+
+}
+
+
+.movement-labels {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #71858b;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================
+   PULSO
+===================================== */
+
+.pulse-card {
+
+    text-align: center;
+
+}
+
+
+.pulse-number {
+
+    margin: 20px;
+
+    color: #168c99;
+
+    font-size: 70px;
+
+    font-weight: bold;
+
+}
+
+
+.pulse-number small {
+
+    font-size: 22px;
+
+}
+
+
+.pulse-line {
+
+    width: 100%;
+
+    height: 4px;
+
+    background: #d7e8eb;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+.pulse-animation {
+
+    position: absolute;
+
+    width: 35%;
+
+    height: 100%;
+
+    background: #22c7c7;
+
+    animation:
+        pulseMove 1.2s infinite linear;
+
+}
+
+
+@keyframes pulseMove {
+
+    from {
+
+        left: -40%;
+
+    }
+
+    to {
+
+        left: 100%;
+
+    }
+
+}
+
+
+/* =====================================
+   INFORMACIÓN
+===================================== */
+
+.info {
+
+    margin-top: 15px;
+
+    color: #788b90;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+
+}
+
+
+.info-panel {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #bff4f8,
+            #ffffff
+        );
+
+    border-radius: 22px;
+
+    border: 1px solid #cce8eb;
+
+}
+
+
+.info-panel h2 {
+
+    color: #168c99;
+
+    margin-bottom: 8px;
+
+}
+
+
+.info-panel p {
+
+    color: #60777c;
+
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    width: 100%;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #e5eef0;
+
+    color: #71858b;
+
+}
+
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .timer-card {
+
+        grid-column: span 1;
+
+    }
+
+
+    .connection-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .topbar {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    main {
+
+        width: 94%;
+
+    }
+
+
+    .card {
+
+        padding: 20px;
+
+    }
+
+
+    .time-inputs {
+
+        gap: 8px;
+
+    }
+
+
+    .time-inputs input {
+
+        width: 90px;
+
+    }
+
+}
+```
